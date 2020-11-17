@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<NUEVOS_DEP>
+<DEP_ROW>
+        <DEPT_NO>2111</DEPT_NO>
+        <DNOMBRE>INFORMATICA</DNOMBRE>
+        <LOC>MADRID</LOC>
+ </DEP_ROW>
+ <DEP_ROW>
+        <DEPT_NO>2211</DEPT_NO>
+        <DNOMBRE>IDIOMAS</DNOMBRE>
+        <LOC>GUADALAJARA</LOC>
+ </DEP_ROW> 
+</NUEVOS_DEP>
