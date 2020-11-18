@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Alumnos>
+  <Alumno DNI="12345678Z">
+    <nombre>Alex</nombre>
+    <apellidos>Ruiz</apellidos>
+    <direccion>Calle Alfonso Nª1</direccion>
+    <email>alex@gmail.com</email>
+    <telefono>610342952</telefono>
+  </Alumno>
+</Alumnos>

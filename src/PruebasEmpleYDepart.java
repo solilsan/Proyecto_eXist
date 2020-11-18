@@ -29,6 +29,8 @@ public class PruebasEmpleYDepart {
 
     public static void main(String[] args) throws XMLDBException {
 
+        GenerarXML.generar();
+
         ExistConnection a = new ExistConnection();
         col = a.Col();
         prueba();

@@ -10,7 +10,7 @@ import java.lang.reflect.InvocationTargetException;
 public class ExistConnection {
     
     final String driver = "org.exist.xmldb.DatabaseImpl";
-    final String URI = "xmldb:exist://localhost:8083/exist/xmlrpc/db/ColeccionPruebas";
+    final String URI = "xmldb:exist://localhost:8083/exist/xmlrpc/db/proyectoExist";
     final String usu = "admin";
     final String usuPwd = "admin";
 
