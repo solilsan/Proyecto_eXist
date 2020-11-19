@@ -29,8 +29,6 @@ public class PruebasEmpleYDepart {
 
     public static void main(String[] args) throws XMLDBException {
 
-        GenerarXML.generar();
-
         ExistConnection a = new ExistConnection();
         col = a.Col();
         prueba();
@@ -330,7 +328,7 @@ public class PruebasEmpleYDepart {
             try {
                 System.out.printf("Conecta");
                 // Inicializamos el recurso
-                XMLResource res = null;
+                XMLResource res;
 
                 // Creamos el recurso -> recibe 2 parámetros tipo String:
                 // s: nombre.xml (si lo dejamos null, pondrá un nombre aleatorio)

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Asignaturas>
+  <Asignatura ID="1">
+    <nombre>Matemáticas</nombre>
+    <profesor>Álvaro</profesor>
+    <horas>210</horas>
+  </Asignatura>
+  <Asignatura ID="2">
+    <nombre>Lenguaje</nombre>
+    <profesor>María</profesor>
+    <horas>180</horas>
+  </Asignatura>
+  <Asignatura ID="3">
+    <nombre>Ciencias</nombre>
+    <profesor>Gorka</profesor>
+    <horas>200</horas>
+  </Asignatura>
+  <Asignatura ID="4">
+    <nombre>Programación</nombre>
+    <profesor>Ekaitz</profesor>
+    <horas>220</horas>
+  </Asignatura>
+</Asignaturas>
