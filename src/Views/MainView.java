@@ -23,17 +23,19 @@ public class MainView extends JFrame {
 
         recargarCol();
 
-        generarXMLsButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        generarXMLsButton.addActionListener(e -> {
+
+            String msgInputDialog = "¿Seguro que deseas generar los XML?, se sobreescribirá los datos.";
+            int input = JOptionPane.showConfirmDialog(null, msgInputDialog, "Generar", JOptionPane.YES_NO_OPTION);
+
+            if (input == 0) {
 
                 String generar = GenerarXML.generarCargarCol();
 
                 if (generar.equals("exito")) {
                     JOptionPane.showMessageDialog(null, "XMLs generados con éxito y almacenados en collecion 'proyectoExist'.", "Información", JOptionPane.INFORMATION_MESSAGE);
                     recargarCol();
-                }
-                else {
+                } else {
                     JOptionPane.showMessageDialog(null, generar, "Información", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
@@ -76,7 +78,8 @@ public class MainView extends JFrame {
         }
         else {
             listaRecursos.setText("Vacía");
-            JOptionPane.showMessageDialog(null, "Falta collecion 'proyectoExist' en eXist", "Información", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Falta collecion 'proyectoExist' en eXist", "Error", JOptionPane.ERROR_MESSAGE);
+            System.exit(0);
         }
 
     }
