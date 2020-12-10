@@ -1,14 +1,14 @@
 package Class;
 
-public class AsigAlum {
+public class Matricula {
 
     private String dniAlumno;
     private String idAsignatura;
     private Double nota;
 
-    public AsigAlum() {}
+    public Matricula() {}
 
-    public AsigAlum(String dniAlumno, String idAsignatura, Double nota) {
+    public Matricula(String dniAlumno, String idAsignatura, Double nota) {
         this.dniAlumno = dniAlumno;
         this.idAsignatura = idAsignatura;
         this.nota = nota;

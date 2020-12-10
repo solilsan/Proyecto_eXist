@@ -54,4 +54,13 @@ public class Asignatura {
     public void setHoras(Integer horas) {
         this.horas = horas;
     }
+
+    @Override
+    public String toString() {
+        return  "<Asignatura ID='" + this.getId() + "'>" +
+                  "<nombre>" + this.getNombre() + "</nombre>" +
+                  "<profesor>" + this.getProfesor() + "</profesor>" +
+                  "<horas>" + this.getHoras() + "</horas>" +
+                "</Asignatura>";
+    }
 }

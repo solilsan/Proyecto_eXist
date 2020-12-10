@@ -1,10 +1,8 @@
 package Views;
 
 import javax.swing.*;
-import Class.GenerarXML;
+import Controller.GenerarXML;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import org.xmldb.api.base.Collection;
 
 public class MainView extends JFrame {
@@ -39,6 +37,13 @@ public class MainView extends JFrame {
                     JOptionPane.showMessageDialog(null, generar, "Información", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
+        });
+
+        entrarButton.addActionListener(e -> {
+            this.setVisible(false);
+            VentanaPrincipal vp = new VentanaPrincipal();
+            vp.setLocationRelativeTo(null);
+            vp.setVisible(true);
         });
 
         this.addWindowListener(new java.awt.event.WindowAdapter() {

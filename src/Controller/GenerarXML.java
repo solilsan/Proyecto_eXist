@@ -1,9 +1,10 @@
-package Class;
+package Controller;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 import org.xmldb.api.base.Collection;
 import org.xmldb.api.modules.XMLResource;
+import Class.*;
 
 import javax.swing.*;
 import java.io.*;
@@ -19,7 +20,7 @@ public class GenerarXML {
 
         File alumnos = new File("./ficheros/Alumnos.xml");
         File asignaturas = new File("./ficheros/Asignaturas.xml");
-        File asigAlum = new File("./ficheros/AsigAlum.xml");
+        File asigAlum = new File("./ficheros/Matriculas.xml");
 
         if (!alumnos.exists() || !asignaturas.exists() || !asigAlum.exists()) {
             existen = false;
@@ -50,7 +51,7 @@ public class GenerarXML {
             generarAsinaturas();
             cargarEnColeccion(conn, "./ficheros/Asignaturas.xml", "Asignaturas.xml");
             generarAsigAlum();
-            cargarEnColeccion(conn, "./ficheros/AsigAlum.xml", "AsigAlum.xml");
+            cargarEnColeccion(conn, "./ficheros/Matriculas.xml", "Matriculas.xml");
 
             return("exito");
 
@@ -96,16 +97,16 @@ public class GenerarXML {
 
     public static void generarAsigAlum() throws IOException {
 
-        ListaAsigAlum listaAsigAlum = new ListaAsigAlum();
+        ListaMatriculas listaMatriculas = new ListaMatriculas();
 
-        listaAsigAlum.add(new AsigAlum("12345678Z", "4", 9.5));
-        listaAsigAlum.add(new AsigAlum("12345678X", "2", 7.0));
-        listaAsigAlum.add(new AsigAlum("12345678D", "1", 8.3));
+        listaMatriculas.add(new Matricula("12345678Z", "4", 9.5));
+        listaMatriculas.add(new Matricula("12345678X", "2", 7.0));
+        listaMatriculas.add(new Matricula("12345678D", "1", 8.3));
 
-        xstream.alias("AsigAlum", ListaAsigAlum.class);
-        xstream.processAnnotations(AsigAlum.class);
-        xstream.addImplicitCollection(ListaAsigAlum.class, "lista");
-        xstream.toXML(listaAsigAlum, xml("./ficheros/AsigAlum.xml"));
+        xstream.alias("Matricula", ListaMatriculas.class);
+        xstream.processAnnotations(Matricula.class);
+        xstream.addImplicitCollection(ListaMatriculas.class, "lista");
+        xstream.toXML(listaMatriculas, xml("./ficheros/Matriculas.xml"));
 
     }
 
