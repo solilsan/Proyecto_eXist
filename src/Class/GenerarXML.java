@@ -7,6 +7,7 @@ import org.xmldb.api.modules.XMLResource;
 
 import javax.swing.*;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 public class GenerarXML {
 
@@ -31,7 +32,7 @@ public class GenerarXML {
     public static Writer xml(String url) throws IOException {
 
         FileOutputStream xml = new FileOutputStream(url);
-        Writer writer = new OutputStreamWriter(xml, "UTF-8");
+        Writer writer = new OutputStreamWriter(xml, StandardCharsets.UTF_8);
         writer.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
 
         return writer;
@@ -108,7 +109,7 @@ public class GenerarXML {
 
     }
 
-    public static String cargarEnColeccion(ExistConnection conn, String url, String nombreFichero) {
+    public static void cargarEnColeccion(ExistConnection conn, String url, String nombreFichero) {
 
         try {
 
@@ -123,10 +124,9 @@ public class GenerarXML {
 
             col.close();
 
-            return "exito";
         }
         catch (Exception e) {
-            return("Error: " + e.getMessage());
+            System.out.println(e.getMessage());
         }
 
     }
