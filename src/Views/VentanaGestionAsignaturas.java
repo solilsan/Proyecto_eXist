@@ -411,7 +411,7 @@ public class VentanaGestionAsignaturas extends JFrame {
 
             try {
 
-                if (!jtCodVer.getText().isEmpty()) {
+                if (!jtCodVer.getText().isEmpty() && !jtNombreVer.getText().isEmpty()) {
 
                     ExistConnection conn = new ExistConnection();
 
@@ -419,38 +419,57 @@ public class VentanaGestionAsignaturas extends JFrame {
 
                     XPathQueryService servicio = (XPathQueryService) col.getService("XPathQueryService", "1.0");
 
-                    String query = "for $alumn in /Alumnos/Alumno, $asig in /Asignaturas/Asignatura";
-                    query += " where data($asig/[@ID='" + jtCodVer.getText() + "'])";
-                    query += " return <res>concat(|{data($alumn/[@DNI])}|{data($alumn/nombre)}|{data($alumn/apellidos)}|{data($alumn/direccion)}|{data($alumn/email)}|{data($alumn/telefono)}|)</res>";
-
-                    String queryB = "for $asig in /Asignaturas/Asignatura, $matri in /Matriculas/Matricula\n" +
-                            "where data($asig/[@ID]) = data($matri/idAsignatura) and data($asig/[@ID='4'])\n" +
-                            "return data($matri/dniAlumno)";
+                    String query = "for $asig in /Asignaturas/Asignatura, $matri in /Matriculas/Matricula";
+                    query += " where data($asig/[@ID]) = data($matri/idAsignatura) and data($asig/[@ID='" + jtCodVer.getText() +"'])";
+                    query += " return <res>concat(|{data($matri/dniAlumno)}|)</res>";
 
                     logger.log(Level.INFO, "[Gestion Asignaturas] Consulta realizada: " + query);
 
                     ResourceSet result = servicio.query(query);
-
-                    // recorrer los datos del recurso.
                     ResourceIterator i = result.getIterator();
 
+                    List<String> listaDniAlumnos = new ArrayList<>();
                     List<Alumno> listaAlumnos = new ArrayList<>();
 
                     while (i.hasMoreResources()) {
                         Resource r = i.nextResource();
                         String dato = (String) r.getContent();
                         String[] parts = dato.split("\\|");
-                        listaAlumnos.add(new Alumno(parts[1], parts[2], parts[3], parts[4], parts[5], Integer.parseInt(parts[6])));
+                        listaDniAlumnos.add(parts[1]);
+                    }
+
+                    if (listaDniAlumnos.size() > 0) {
+                        for (int x = 0; x < listaDniAlumnos.size(); x++) {
+                            query = "for $alumn in /Alumnos/Alumno";
+                            query += " where data($alumn[@DNI='" + listaDniAlumnos.get(x) + "'])";
+                            query += " return <res>concat(|{data($alumn/[@DNI])}|{data($alumn/nombre)}|{data($alumn/apellidos)}|{data($alumn/direccion)}|{data($alumn/email)}|{data($alumn/telefono)}|)</res>";
+
+                            logger.log(Level.INFO, "[Gestion Asignaturas] Consulta realizada: " + query);
+
+                            result = servicio.query(query);
+                            i = result.getIterator();
+                            if (i.hasMoreResources()) {
+                                Resource r = i.nextResource();
+                                String dato = (String) r.getContent();
+                                String[] parts = dato.split("\\|");
+                                listaAlumnos.add(new Alumno(parts[1], parts[2], parts[3], parts[4], parts[5], Integer.parseInt(parts[6])));
+                            }
+                        }
                     }
 
                     col.close();
 
-                    VentanaListaAlumnosAsignatura vlaa = new VentanaListaAlumnosAsignatura(listaAlumnos);
-                    vlaa.setLocationRelativeTo(null);
-                    vlaa.setVisible(true);
+                    if (listaAlumnos.size() == 0) {
+                        JOptionPane.showMessageDialog(null, "Esta asignatura no tiene alumnos.", "Información",
+                                JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        VentanaListaAlumnosAsignatura vlaa = new VentanaListaAlumnosAsignatura(listaAlumnos, jtNombreVer.getText());
+                        vlaa.setLocationRelativeTo(null);
+                        vlaa.setVisible(true);
+                    }
 
                 } else {
-                    JOptionPane.showMessageDialog(null, "Ejecute la busqueda primero por favor.", "Información",
+                    JOptionPane.showMessageDialog(null, "Ejecuta la búsqueda primero por favor.", "Información",
                             JOptionPane.INFORMATION_MESSAGE);
                 }
 

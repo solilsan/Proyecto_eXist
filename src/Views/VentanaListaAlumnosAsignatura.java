@@ -13,11 +13,11 @@ public class VentanaListaAlumnosAsignatura extends JFrame {
 
     private List<Alumno> listaAlumnos;
 
-    public VentanaListaAlumnosAsignatura(List<Alumno> listaAlumnos) {
+    public VentanaListaAlumnosAsignatura(List<Alumno> listaAlumnos, String nombreAsig) {
 
         add(panel1);
         setResizable(false);
-        setTitle("Lista de alumnos ");
+        setTitle("Lista de alumnos de " + nombreAsig);
         setBounds(100, 100, 1000, 600);
 
         this.listaAlumnos = listaAlumnos;

@@ -1,90 +1,10 @@
-dic. 11, 2020 2:24:47 P. M. Views.VentanaGestionAlumnos lambda$new$4
-INFO: [Gestion Alumnos] Consulta realizada: for $alumn in /Alumnos/Alumno return <res>concat(|{data($alumn/[@DNI])}|{data($alumn/nombre)}|{data($alumn/apellidos)}|{data($alumn/direccion)}|{data($alumn/email)}|{data($alumn/telefono)}|)</res>
-dic. 11, 2020 2:36:45 P. M. Views.VentanaGestionAlumnos lambda$new$4
-INFO: [Gestion Alumnos] Consulta realizada: for $alumn in /Alumnos/Alumno return <res>concat(|{data($alumn/[@DNI])}|{data($alumn/nombre)}|{data($alumn/apellidos)}|{data($alumn/direccion)}|{data($alumn/email)}|{data($alumn/telefono)}|)</res>
-dic. 11, 2020 6:45:04 P. M. Views.VentanaGestionAlumnos lambda$new$4
-INFO: [Gestion Alumnos] Consulta realizada: for $alumn in /Alumnos/Alumno return <res>concat(|{data($alumn/[@DNI])}|{data($alumn/nombre)}|{data($alumn/apellidos)}|{data($alumn/direccion)}|{data($alumn/email)}|{data($alumn/telefono)}|)</res>
-dic. 11, 2020 6:45:21 P. M. Views.VentanaGestionAsignaturas lambda$new$4
-INFO: [Gestion Asignaturas] Consulta realizada: for $asig in /Asignaturas/Asignatura return <res>concat(|{data($asig/[@ID])}|{data($asig/nombre)}|{data($asig/profesor)}|{data($asig/horas)}|)</res>
-dic. 11, 2020 6:47:55 P. M. Views.VentanaGestionAsignaturas lambda$new$4
-INFO: [Gestion Asignaturas] Consulta realizada: for $asig in /Asignaturas/Asignatura return <res>concat(|{data($asig/[@ID])}|{data($asig/nombre)}|{data($asig/profesor)}|{data($asig/horas)}|)</res>
-dic. 11, 2020 6:48:08 P. M. Views.VentanaGestionAsignaturas lambda$new$1
-INFO: [Gestion Asignaturas] Consulta realizada: /Asignaturas/Asignatura[@ID=5]
-dic. 11, 2020 6:48:08 P. M. Views.VentanaGestionAsignaturas lambda$new$1
-INFO: [Gestion Asignaturas] Insert realizado: update insert <Asignatura ID='5'><nombre>prueba</nombre><profesor>prueba</profesor><horas>100</horas></Asignatura> into /Asignaturas
-dic. 11, 2020 6:48:11 P. M. Views.VentanaGestionAsignaturas lambda$new$4
-INFO: [Gestion Asignaturas] Consulta realizada: for $asig in /Asignaturas/Asignatura where data($asig[@ID='1']) return <res>concat(|{data($asig/[@ID])}|{data($asig/nombre)}|{data($asig/profesor)}|{data($asig/horas)}|)</res>
-dic. 11, 2020 6:48:13 P. M. Views.VentanaGestionAsignaturas lambda$new$4
-INFO: [Gestion Asignaturas] Consulta realizada: for $asig in /Asignaturas/Asignatura return <res>concat(|{data($asig/[@ID])}|{data($asig/nombre)}|{data($asig/profesor)}|{data($asig/horas)}|)</res>
-dic. 11, 2020 6:50:09 P. M. Views.VentanaGestionAsignaturas lambda$new$4
-INFO: [Gestion Asignaturas] Consulta realizada: for $asig in /Asignaturas/Asignatura return <res>concat(|{data($asig/[@ID])}|{data($asig/nombre)}|{data($asig/profesor)}|{data($asig/horas)}|)</res>
-dic. 11, 2020 7:26:35 P. M. Views.MainView lambda$new$0
+dic. 11, 2020 11:01:59 P. M. Views.MainView lambda$new$0
 INFO: [MainView] Xmls generados
-dic. 11, 2020 7:28:30 P. M. Views.MainView lambda$new$0
-INFO: [MainView] Xmls generados
-dic. 11, 2020 7:28:46 P. M. Views.MainView lambda$new$0
-INFO: [MainView] Xmls generados
-dic. 11, 2020 7:29:51 P. M. Views.MainView lambda$new$0
-INFO: [MainView] Xmls generados
-dic. 11, 2020 7:31:25 P. M. Views.MainView lambda$new$0
-INFO: [MainView] Xmls generados
-dic. 11, 2020 7:43:36 P. M. Views.VentanaGestionMatriculas lambda$new$0
+dic. 12, 2020 12:07:42 A. M. Views.VentanaGestionMatriculas lambda$new$2
 INFO: [Gestion Matriculas] Insert realizado: update insert <Matricula><dniAlumno>12345678Z</dniAlumno><idAsignatura>1</idAsignatura><nota>0.0</nota></Matricula> into /Matriculas
-dic. 11, 2020 8:13:23 P. M. Views.VentanaGestionMatriculas lambda$new$2
-INFO: [Gestion Matriculas] Insert realizado: update insert <Matricula><dniAlumno>12345678D</dniAlumno><idAsignatura>4</idAsignatura><nota>0.0</nota></Matricula> into /Matriculas
-dic. 11, 2020 8:13:57 P. M. Views.VentanaGestionMatriculas lambda$new$2
-INFO: [Gestion Matriculas] Insert realizado: update insert <Matricula><dniAlumno>12345678Z</dniAlumno><idAsignatura>2</idAsignatura><nota>0.0</nota></Matricula> into /Matriculas
-dic. 11, 2020 8:15:06 P. M. Views.VentanaGestionMatriculas lambda$new$2
-INFO: [Gestion Matriculas] Insert realizado: update insert <Matricula><dniAlumno>12345678Z</dniAlumno><idAsignatura>3</idAsignatura><nota>0.0</nota></Matricula> into /Matriculas
-dic. 11, 2020 8:21:08 P. M. Views.VentanaGestionMatriculas lambda$new$3
-INFO: [Gestion Matriculas] Update realizado: update value /Matriculas/Matricula[dniAlumno='12345678Z' and idAsignatura='1']/nota with data('0.0')
-dic. 11, 2020 8:21:15 P. M. Views.VentanaGestionMatriculas lambda$new$3
-INFO: [Gestion Matriculas] Update realizado: update value /Matriculas/Matricula[dniAlumno='12345678Z' and idAsignatura='1']/nota with data('1.0')
-dic. 11, 2020 8:21:39 P. M. Views.VentanaGestionMatriculas lambda$new$3
-INFO: [Gestion Matriculas] Update realizado: update value /Matriculas/Matricula[dniAlumno='12345678Z' and idAsignatura='1']/nota with data('2.5')
-dic. 11, 2020 8:40:53 P. M. Views.VentanaGestionAsignaturas lambda$new$5
-INFO: [Gestion Asignaturas] Consulta realizada: for $asig in /Asignaturas/Asignatura return <res>concat(|{data($asig/[@ID])}|{data($asig/nombre)}|{data($asig/profesor)}|{data($asig/horas)}|)</res>
-dic. 11, 2020 8:41:11 P. M. Views.VentanaGestionAsignaturas lambda$new$5
-INFO: [Gestion Asignaturas] Consulta realizada: for $asig in /Asignaturas/Asignatura where data($asig/horas) = data('210') return <res>concat(|{data($asig/[@ID])}|{data($asig/nombre)}|{data($asig/profesor)}|{data($asig/horas)}|)</res>
-dic. 11, 2020 8:41:22 P. M. Views.VentanaGestionAlumnos lambda$new$4
+dic. 12, 2020 12:07:50 A. M. Views.VentanaGestionMatriculas lambda$new$3
+INFO: [Gestion Matriculas] Update realizado: update value /Matriculas/Matricula[dniAlumno='12345678Z' and idAsignatura='1']/nota with data('2.0')
+dic. 12, 2020 12:07:55 A. M. Views.VentanaGestionAlumnos lambda$new$4
 INFO: [Gestion Alumnos] Consulta realizada: for $alumn in /Alumnos/Alumno return <res>concat(|{data($alumn/[@DNI])}|{data($alumn/nombre)}|{data($alumn/apellidos)}|{data($alumn/direccion)}|{data($alumn/email)}|{data($alumn/telefono)}|)</res>
-dic. 11, 2020 8:54:33 P. M. Views.VentanaGestionAsignaturas lambda$new$5
+dic. 12, 2020 12:07:59 A. M. Views.VentanaGestionAsignaturas lambda$new$5
 INFO: [Gestion Asignaturas] Consulta realizada: for $asig in /Asignaturas/Asignatura return <res>concat(|{data($asig/[@ID])}|{data($asig/nombre)}|{data($asig/profesor)}|{data($asig/horas)}|)</res>
-dic. 11, 2020 8:54:33 P. M. Views.VentanaGestionAsignaturas lambda$new$4
-INFO: [Gestion Asignaturas] Consulta realizada: for $alumn in /Alumnos/Alumno where data($alumn/[@DNI='12345678Z']) return <res>concat(|{data($alumn/[@DNI])}|{data($alumn/nombre)}|{data($alumn/apellidos)}|{data($alumn/direccion)}|{data($alumn/email)}|{data($alumn/telefono)}|)</res>
-dic. 11, 2020 8:55:57 P. M. Views.VentanaGestionAsignaturas lambda$new$5
-INFO: [Gestion Asignaturas] Consulta realizada: for $asig in /Asignaturas/Asignatura return <res>concat(|{data($asig/[@ID])}|{data($asig/nombre)}|{data($asig/profesor)}|{data($asig/horas)}|)</res>
-dic. 11, 2020 8:55:57 P. M. Views.VentanaGestionAsignaturas lambda$new$4
-INFO: [Gestion Asignaturas] Consulta realizada: for $alumn in /Alumnos/Alumno where data($alumn/[@DNI='12345678Z']) return <res>concat(|{data($alumn/[@DNI])}|{data($alumn/nombre)}|{data($alumn/apellidos)}|{data($alumn/direccion)}|{data($alumn/email)}|{data($alumn/telefono)}|)</res>
-dic. 11, 2020 8:56:42 P. M. Views.VentanaGestionAsignaturas lambda$new$5
-INFO: [Gestion Asignaturas] Consulta realizada: for $asig in /Asignaturas/Asignatura return <res>concat(|{data($asig/[@ID])}|{data($asig/nombre)}|{data($asig/profesor)}|{data($asig/horas)}|)</res>
-dic. 11, 2020 8:56:43 P. M. Views.VentanaGestionAsignaturas lambda$new$4
-INFO: [Gestion Asignaturas] Consulta realizada: for $alumn in /Alumnos/Alumno where data($alumn/[@DNI='12345678Z']) return <res>concat(|{data($alumn/[@DNI])}|{data($alumn/nombre)}|{data($alumn/apellidos)}|{data($alumn/direccion)}|{data($alumn/email)}|{data($alumn/telefono)}|)</res>
-dic. 11, 2020 8:57:50 P. M. Views.VentanaGestionAsignaturas lambda$new$5
-INFO: [Gestion Asignaturas] Consulta realizada: for $asig in /Asignaturas/Asignatura return <res>concat(|{data($asig/[@ID])}|{data($asig/nombre)}|{data($asig/profesor)}|{data($asig/horas)}|)</res>
-dic. 11, 2020 8:57:50 P. M. Views.VentanaGestionAsignaturas lambda$new$4
-INFO: [Gestion Asignaturas] Consulta realizada: for $alumn in /Alumnos/Alumno where data($alumn/[@DNI='12345678Z']) return <res>concat(|{data($alumn/[@DNI])}|{data($alumn/nombre)}|{data($alumn/apellidos)}|{data($alumn/direccion)}|{data($alumn/email)}|{data($alumn/telefono)}|)</res>
-dic. 11, 2020 8:58:47 P. M. Views.VentanaGestionAsignaturas lambda$new$5
-INFO: [Gestion Asignaturas] Consulta realizada: for $asig in /Asignaturas/Asignatura return <res>concat(|{data($asig/[@ID])}|{data($asig/nombre)}|{data($asig/profesor)}|{data($asig/horas)}|)</res>
-dic. 11, 2020 8:58:48 P. M. Views.VentanaGestionAsignaturas lambda$new$4
-INFO: [Gestion Asignaturas] Consulta realizada: for $alumn in /Alumnos/Alumno where data($alumn/[@DNI='12345678Z']) return <res>concat(|{data($alumn/[@DNI])}|{data($alumn/nombre)}|{data($alumn/apellidos)}|{data($alumn/direccion)}|{data($alumn/email)}|{data($alumn/telefono)}|)</res>
-dic. 11, 2020 8:59:04 P. M. Views.VentanaGestionAsignaturas lambda$new$5
-INFO: [Gestion Asignaturas] Consulta realizada: for $asig in /Asignaturas/Asignatura return <res>concat(|{data($asig/[@ID])}|{data($asig/nombre)}|{data($asig/profesor)}|{data($asig/horas)}|)</res>
-dic. 11, 2020 8:59:05 P. M. Views.VentanaGestionAsignaturas lambda$new$4
-INFO: [Gestion Asignaturas] Consulta realizada: for $alumn in /Alumnos/Alumno where data($alumn/[@DNI='12345678Z']) return <res>concat(|{data($alumn/[@DNI])}|{data($alumn/nombre)}|{data($alumn/apellidos)}|{data($alumn/direccion)}|{data($alumn/email)}|{data($alumn/telefono)}|)</res>
-dic. 11, 2020 9:00:31 P. M. Views.VentanaGestionAsignaturas lambda$new$5
-INFO: [Gestion Asignaturas] Consulta realizada: for $asig in /Asignaturas/Asignatura return <res>concat(|{data($asig/[@ID])}|{data($asig/nombre)}|{data($asig/profesor)}|{data($asig/horas)}|)</res>
-dic. 11, 2020 9:10:12 P. M. Views.VentanaGestionAsignaturas lambda$new$5
-INFO: [Gestion Asignaturas] Consulta realizada: for $asig in /Asignaturas/Asignatura return <res>concat(|{data($asig/[@ID])}|{data($asig/nombre)}|{data($asig/profesor)}|{data($asig/horas)}|)</res>
-dic. 11, 2020 9:10:12 P. M. Views.VentanaGestionAsignaturas lambda$new$4
-INFO: [Gestion Asignaturas] Consulta realizada: for $alumn in /Alumnos/Alumno, $asig in /Asignaturas/Asignatura where data($asig/[@ID='1'])='1']) return <res>concat(|{data($alumn/[@DNI])}|{data($alumn/nombre)}|{data($alumn/apellidos)}|{data($alumn/direccion)}|{data($alumn/email)}|{data($alumn/telefono)}|)</res>
-dic. 11, 2020 9:11:07 P. M. Views.VentanaGestionAsignaturas lambda$new$5
-INFO: [Gestion Asignaturas] Consulta realizada: for $asig in /Asignaturas/Asignatura return <res>concat(|{data($asig/[@ID])}|{data($asig/nombre)}|{data($asig/profesor)}|{data($asig/horas)}|)</res>
-dic. 11, 2020 9:11:08 P. M. Views.VentanaGestionAsignaturas lambda$new$4
-INFO: [Gestion Asignaturas] Consulta realizada: for $alumn in /Alumnos/Alumno, $asig in /Asignaturas/Asignatura where data($asig/[@ID='1']) return <res>concat(|{data($alumn/[@DNI])}|{data($alumn/nombre)}|{data($alumn/apellidos)}|{data($alumn/direccion)}|{data($alumn/email)}|{data($alumn/telefono)}|)</res>
-dic. 11, 2020 9:11:24 P. M. Views.VentanaGestionAsignaturas lambda$new$4
-INFO: [Gestion Asignaturas] Consulta realizada: for $alumn in /Alumnos/Alumno, $asig in /Asignaturas/Asignatura where data($asig/[@ID='2']) return <res>concat(|{data($alumn/[@DNI])}|{data($alumn/nombre)}|{data($alumn/apellidos)}|{data($alumn/direccion)}|{data($alumn/email)}|{data($alumn/telefono)}|)</res>
-dic. 11, 2020 9:11:28 P. M. Views.VentanaGestionAsignaturas lambda$new$4
-INFO: [Gestion Asignaturas] Consulta realizada: for $alumn in /Alumnos/Alumno, $asig in /Asignaturas/Asignatura where data($asig/[@ID='3']) return <res>concat(|{data($alumn/[@DNI])}|{data($alumn/nombre)}|{data($alumn/apellidos)}|{data($alumn/direccion)}|{data($alumn/email)}|{data($alumn/telefono)}|)</res>
-dic. 11, 2020 9:11:31 P. M. Views.VentanaGestionAsignaturas lambda$new$4
-INFO: [Gestion Asignaturas] Consulta realizada: for $alumn in /Alumnos/Alumno, $asig in /Asignaturas/Asignatura where data($asig/[@ID='4']) return <res>concat(|{data($alumn/[@DNI])}|{data($alumn/nombre)}|{data($alumn/apellidos)}|{data($alumn/direccion)}|{data($alumn/email)}|{data($alumn/telefono)}|)</res>
