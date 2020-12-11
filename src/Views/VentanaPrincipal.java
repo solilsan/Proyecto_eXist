@@ -2,16 +2,23 @@ package Views;
 
 import javax.swing.*;
 import java.awt.event.KeyEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.logging.Logger;
 
 public class VentanaPrincipal extends JFrame {
 
     private JPanel panel1;
     private JLabel back;
+    Logger logger;
 
-    public VentanaPrincipal() {
+    public VentanaPrincipal(Logger logger) {
 
-        //ImageIcon imgIcon = new ImageIcon("resources/ventanaprincipalbg.png");
-        //back.setIcon(imgIcon);
+        ImageIcon imgIcon = new ImageIcon("resources/x.png");
+        back.setIcon(imgIcon);
 
         add(panel1);
 
@@ -19,6 +26,8 @@ public class VentanaPrincipal extends JFrame {
         setTitle("Gestión del Colegio");
         setResizable(false);
         setSize(1024, 720);
+
+        this.logger = logger;
 
         this.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
@@ -44,19 +53,63 @@ public class VentanaPrincipal extends JFrame {
         baseDatosMenu.add(baseDatosMenuItem);
         menuBar.add(baseDatosMenu);
 
-        var proveedoresMenu = new JMenu("Asignaturas");
-        menuBar.add(proveedoresMenu);
+        var asignaturasMenu = new JMenu("Asignaturas");
+        menuBar.add(asignaturasMenu);
 
-        var proveedoresGestionItem = new JMenuItem("Gestión de Asignaturas");
-        proveedoresGestionItem.addActionListener(
+        var asignaturasGestionItem = new JMenuItem("Gestión de Asignaturas");
+        asignaturasGestionItem.addActionListener(
                 (event) -> {
-                    VentanaGestionAsignaturas vga = new VentanaGestionAsignaturas();
+                    VentanaGestionAsignaturas vga = new VentanaGestionAsignaturas(logger);
                     vga.setLocationRelativeTo(null);
                     vga.setVisible(true);
                 }
         );
 
-        proveedoresMenu.add(proveedoresGestionItem);
+        asignaturasMenu.add(asignaturasGestionItem);
+
+        var alumnosMenu = new JMenu("Alumnos");
+        menuBar.add(alumnosMenu);
+
+        var alumnosGestionItem = new JMenuItem("Gestión de Alumnos");
+        alumnosGestionItem.addActionListener(
+                (event) -> {
+                    VentanaGestionAlumnos vga = new VentanaGestionAlumnos(logger);
+                    vga.setLocationRelativeTo(null);
+                    vga.setVisible(true);
+                }
+        );
+
+        alumnosMenu.add(alumnosGestionItem);
+
+        var logMenu = new JMenu("Logs");
+        menuBar.add(logMenu);
+
+        var verLogItem = new JMenuItem("Ver logs");
+        verLogItem.addActionListener(
+                (event) -> {
+
+                    try {
+
+                        File f = new File("ficheros/log_actividad.txt");
+
+                        if (!f.exists() || f.length() == 0) {
+                            JOptionPane.showMessageDialog(null, "El archivo no existe o esta vacío.", "Información",
+                                    JOptionPane.INFORMATION_MESSAGE);
+                        } else {
+                            BufferedReader b = new BufferedReader(new FileReader(f));
+                            VentanaLog vl = new VentanaLog(b);
+                            vl.setLocationRelativeTo(null);
+                            vl.setVisible(true);
+                        }
+
+                    } catch (Exception ex) {
+                        System.out.println(ex.getMessage());
+                    }
+
+                }
+        );
+
+        logMenu.add(verLogItem);
 
         setJMenuBar(menuBar);
     }

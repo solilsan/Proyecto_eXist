@@ -3,13 +3,19 @@ package Views;
 import javax.swing.*;
 import Controller.GenerarXML;
 
+import Controller.InitLog;
 import org.xmldb.api.base.Collection;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class MainView extends JFrame {
     private JPanel panel1;
     private JButton generarXMLsButton;
     private JButton entrarButton;
     private JLabel listaRecursos;
+
+    Logger logger = Logger.getLogger("MyLog");
 
     public MainView() {
 
@@ -18,6 +24,8 @@ public class MainView extends JFrame {
         setTitle("Generar XML");
         setResizable(false);
         setSize(520, 300);
+
+        InitLog.iniciarLog(logger);
 
         recargarCol();
 
@@ -33,6 +41,8 @@ public class MainView extends JFrame {
                 if (generar.equals("exito")) {
                     JOptionPane.showMessageDialog(null, "XMLs generados con éxito y almacenados en collecion 'proyectoExist'.", "Información", JOptionPane.INFORMATION_MESSAGE);
                     recargarCol();
+
+                    logger.log(Level.INFO, "[MainView] Xmls generados");
                 } else {
                     JOptionPane.showMessageDialog(null, generar, "Información", JOptionPane.INFORMATION_MESSAGE);
                 }
@@ -41,7 +51,7 @@ public class MainView extends JFrame {
 
         entrarButton.addActionListener(e -> {
             this.setVisible(false);
-            VentanaPrincipal vp = new VentanaPrincipal();
+            VentanaPrincipal vp = new VentanaPrincipal(logger);
             vp.setLocationRelativeTo(null);
             vp.setVisible(true);
         });

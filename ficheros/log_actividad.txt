@@ -1,22 +1,4 @@
-dic. 10, 2020 12:23:53 P. M. Views.VentanaGestionAsignaturas lambda$new$1
-INFO: [Gestion Asignaturas] Consulta realizada: /Asignaturas/Asignatura[@ID=1]
-dic. 10, 2020 12:24:58 P. M. Views.VentanaGestionAsignaturas lambda$new$1
-INFO: [Gestion Asignaturas] Consulta realizada: /Asignaturas/Asignatura[@ID=6]
-dic. 10, 2020 12:24:58 P. M. Views.VentanaGestionAsignaturas lambda$new$1
-INFO: [Gestion Asignaturas] Insert realizado: update insert <Asignatura ID='6'><nombre>a</nombre><profesor>a</profesor><horas>5</horas></Asignatura> into /Asignaturas
-dic. 10, 2020 12:25:02 P. M. Views.VentanaGestionAsignaturas lambda$new$1
-INFO: [Gestion Asignaturas] Consulta realizada: /Asignaturas/Asignatura[@ID=6]
-dic. 10, 2020 1:40:41 P. M. Views.VentanaGestionAsignaturas lambda$new$2
-INFO: [Gestion Asignaturas] Update realizado: update value /Asignaturas/Asignatura[@ID=6]/nombre with data('prueba') 
-dic. 10, 2020 1:40:41 P. M. Views.VentanaGestionAsignaturas lambda$new$2
-INFO: [Gestion Asignaturas] Update realizado: update value /Asignaturas/Asignatura[@ID=6]/profesor with data('pruebas') 
-dic. 10, 2020 1:40:41 P. M. Views.VentanaGestionAsignaturas lambda$new$2
-INFO: [Gestion Asignaturas] Update realizado: update value /Asignaturas/Asignatura[@ID=6]/horas with data('20') 
-dic. 10, 2020 1:46:24 P. M. Views.VentanaGestionAsignaturas lambda$new$1
-INFO: [Gestion Asignaturas] Consulta realizada: /Asignaturas/Asignatura[@ID=5]
-dic. 10, 2020 1:46:24 P. M. Views.VentanaGestionAsignaturas lambda$new$1
-INFO: [Gestion Asignaturas] Insert realizado: update insert <Asignatura ID='5'><nombre>prueba</nombre><profesor>prueba</profesor><horas>100</horas></Asignatura> into /Asignaturas
-dic. 10, 2020 1:46:33 P. M. Views.VentanaGestionAsignaturas lambda$new$1
-INFO: [Gestion Asignaturas] Consulta realizada: /Asignaturas/Asignatura[@ID=5]
-dic. 10, 2020 1:48:24 P. M. Views.VentanaGestionAsignaturas lambda$new$3
-INFO: [Gestion Asignaturas] Delete realizado: update delete /Asignaturas/Asignatura[@ID=5]
+dic. 11, 2020 2:24:47 P. M. Views.VentanaGestionAlumnos lambda$new$4
+INFO: [Gestion Alumnos] Consulta realizada: for $alumn in /Alumnos/Alumno return <res>concat(|{data($alumn/[@DNI])}|{data($alumn/nombre)}|{data($alumn/apellidos)}|{data($alumn/direccion)}|{data($alumn/email)}|{data($alumn/telefono)}|)</res>
+dic. 11, 2020 2:36:45 P. M. Views.VentanaGestionAlumnos lambda$new$4
+INFO: [Gestion Alumnos] Consulta realizada: for $alumn in /Alumnos/Alumno return <res>concat(|{data($alumn/[@DNI])}|{data($alumn/nombre)}|{data($alumn/apellidos)}|{data($alumn/direccion)}|{data($alumn/email)}|{data($alumn/telefono)}|)</res>
