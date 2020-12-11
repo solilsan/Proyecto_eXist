@@ -2,8 +2,6 @@ package Views;
 
 import javax.swing.*;
 import java.awt.event.KeyEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -80,6 +78,20 @@ public class VentanaPrincipal extends JFrame {
         );
 
         alumnosMenu.add(alumnosGestionItem);
+
+        var matriculasMenu = new JMenu("Matriculas");
+        menuBar.add(matriculasMenu);
+
+        var matriculasGestionItem = new JMenuItem("Gestión de Matriculas");
+        matriculasGestionItem.addActionListener(
+                (event) -> {
+                    VentanaGestionMatriculas vgm = new VentanaGestionMatriculas(logger);
+                    vgm.setLocationRelativeTo(null);
+                    vgm.setVisible(true);
+                }
+        );
+
+        matriculasMenu.add(matriculasGestionItem);
 
         var logMenu = new JMenu("Logs");
         menuBar.add(logMenu);
