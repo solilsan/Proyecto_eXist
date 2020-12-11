@@ -10,11 +10,11 @@ public class ListaMatriculas {
     public ListaMatriculas(){
     }
 
-    public void add(Matricula asigAlum) {
-        lista.add(asigAlum);
+    public void add(Matricula matricula) {
+        lista.add(matricula);
     }
 
-    public List<Matricula> getListaAsigAlum() {
+    public List<Matricula> getMatriculas() {
         return lista;
     }
 

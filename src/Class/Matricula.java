@@ -37,4 +37,13 @@ public class Matricula {
     public void setNota(Double nota) {
         this.nota = nota;
     }
+
+    @Override
+    public String toString() {
+        return  "<Matricula>" +
+                "<dniAlumno>" + this.getDniAlumno() + "</dniAlumno>" +
+                "<idAsignatura>" + this.getIdAsignatura() + "</idAsignatura>" +
+                "<nota>" + this.getNota() + "</nota>" +
+                "</Matricula>";
+    }
 }
