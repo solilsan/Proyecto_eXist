@@ -7,4 +7,32 @@
     <email>alex@gmail.com</email>
     <telefono>610342952</telefono>
   </Alumno>
+  <Alumno DNI="12345678A">
+    <nombre>Pepe</nombre>
+    <apellidos>Calvo</apellidos>
+    <direccion>Calle Medron Nª4</direccion>
+    <email>pepe@gmail.com</email>
+    <telefono>647384829</telefono>
+  </Alumno>
+  <Alumno DNI="12345678Q">
+    <nombre>Juan</nombre>
+    <apellidos>Mendoza</apellidos>
+    <direccion>Calle Holy Nª2</direccion>
+    <email>juan@gmail.com</email>
+    <telefono>945364738</telefono>
+  </Alumno>
+  <Alumno DNI="12345678X">
+    <nombre>Lucas</nombre>
+    <apellidos>Federico</apellidos>
+    <direccion>Calle Fuelles Nª10</direccion>
+    <email>lucas@gmail.com</email>
+    <telefono>645829301</telefono>
+  </Alumno>
+  <Alumno DNI="12345678D">
+    <nombre>Marcos</nombre>
+    <apellidos>Garcia</apellidos>
+    <direccion>Calle Nonas Nª9</direccion>
+    <email>marcos@gmail.com</email>
+    <telefono>945839402</telefono>
+  </Alumno>
 </Alumnos>

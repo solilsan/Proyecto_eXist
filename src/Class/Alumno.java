@@ -74,4 +74,15 @@ public class Alumno {
     public void setTelefono(Integer telefono) {
         this.telefono = telefono;
     }
+
+    @Override
+    public String toString() {
+        return  "<Alumno DNI='" + this.getDni() + "'>" +
+                "<nombre>" + this.getNombre() + "</nombre>" +
+                "<direccion>" + this.getDireccion() + "</direccion>" +
+                "<apellidos>" + this.getApellidos() + "</apellidos>" +
+                "<email>" + this.getEmail() + "</email>" +
+                "<telefono>" + this.getTelefono() + "</telefono>" +
+                "</Alumno>";
+    }
 }

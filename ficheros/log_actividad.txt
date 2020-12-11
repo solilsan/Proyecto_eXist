@@ -1,0 +1,4 @@
+dic. 11, 2020 2:24:47 P. M. Views.VentanaGestionAlumnos lambda$new$4
+INFO: [Gestion Alumnos] Consulta realizada: for $alumn in /Alumnos/Alumno return <res>concat(|{data($alumn/[@DNI])}|{data($alumn/nombre)}|{data($alumn/apellidos)}|{data($alumn/direccion)}|{data($alumn/email)}|{data($alumn/telefono)}|)</res>
+dic. 11, 2020 2:36:45 P. M. Views.VentanaGestionAlumnos lambda$new$4
+INFO: [Gestion Alumnos] Consulta realizada: for $alumn in /Alumnos/Alumno return <res>concat(|{data($alumn/[@DNI])}|{data($alumn/nombre)}|{data($alumn/apellidos)}|{data($alumn/direccion)}|{data($alumn/email)}|{data($alumn/telefono)}|)</res>
