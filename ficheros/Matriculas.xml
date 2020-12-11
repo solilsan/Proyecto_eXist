@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Matricula>
-  <Class.Matricula>
+<Matriculas>
+  <Matricula>
     <dniAlumno>12345678Z</dniAlumno>
     <idAsignatura>4</idAsignatura>
     <nota>9.5</nota>
-  </Class.Matricula>
-  <Class.Matricula>
+  </Matricula>
+  <Matricula>
     <dniAlumno>12345678X</dniAlumno>
     <idAsignatura>2</idAsignatura>
     <nota>7.0</nota>
-  </Class.Matricula>
-  <Class.Matricula>
+  </Matricula>
+  <Matricula>
     <dniAlumno>12345678D</dniAlumno>
     <idAsignatura>1</idAsignatura>
     <nota>8.3</nota>
-  </Class.Matricula>
-</Matricula>
+  </Matricula>
+</Matriculas>

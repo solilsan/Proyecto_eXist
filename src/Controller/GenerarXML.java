@@ -50,7 +50,7 @@ public class GenerarXML {
             cargarEnColeccion(conn, "./ficheros/Alumnos.xml", "Alumnos.xml");
             generarAsinaturas();
             cargarEnColeccion(conn, "./ficheros/Asignaturas.xml", "Asignaturas.xml");
-            generarAsigAlum();
+            generarMatriculas();
             cargarEnColeccion(conn, "./ficheros/Matriculas.xml", "Matriculas.xml");
 
             return("exito");
@@ -95,7 +95,7 @@ public class GenerarXML {
 
     }
 
-    public static void generarAsigAlum() throws IOException {
+    public static void generarMatriculas() throws IOException {
 
         ListaMatriculas listaMatriculas = new ListaMatriculas();
 
@@ -103,8 +103,8 @@ public class GenerarXML {
         listaMatriculas.add(new Matricula("12345678X", "2", 7.0));
         listaMatriculas.add(new Matricula("12345678D", "1", 8.3));
 
-        xstream.alias("Matricula", ListaMatriculas.class);
-        xstream.processAnnotations(Matricula.class);
+        xstream.alias("Matriculas", ListaMatriculas.class);
+        xstream.alias("Matricula", Matricula.class);
         xstream.addImplicitCollection(ListaMatriculas.class, "lista");
         xstream.toXML(listaMatriculas, xml("./ficheros/Matriculas.xml"));
 

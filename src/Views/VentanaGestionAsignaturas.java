@@ -1,6 +1,7 @@
 package Views;
 
 import Class.Asignatura;
+import Class.Alumno;
 import Class.ExistConnection;
 import org.xmldb.api.base.Collection;
 import org.xmldb.api.base.Resource;
@@ -308,6 +309,11 @@ public class VentanaGestionAsignaturas extends JFrame {
         lbl2.setBounds(20, 20, 480, 14);
         panel2.add(lbl2);
 
+        // lista alumnos en la asignatura seleccionada
+        JButton jbListaAlumnos = new JButton("Lista Alumnos");
+        jbListaAlumnos.setBounds(400, 20, 150, 40);
+        panel2.add(jbListaAlumnos);
+
         // Codigo Asignatura
         JLabel jlCodVer = new JLabel("Código:");
         jlCodVer.setBounds(90, 60, 200, 20);
@@ -399,6 +405,79 @@ public class VentanaGestionAsignaturas extends JFrame {
         JButton jbLimpiarVer = new JButton("Limpiar");
         jbLimpiarVer.setBounds(80, 250, 100, 40);
         panel2.add(jbLimpiarVer);
+
+        // Boton lista alumno
+        jbListaAlumnos.addActionListener(e -> {
+
+            try {
+
+                if (!jtCodVer.getText().isEmpty() && !jtNombreVer.getText().isEmpty()) {
+
+                    ExistConnection conn = new ExistConnection();
+
+                    Collection col = conn.Col();
+
+                    XPathQueryService servicio = (XPathQueryService) col.getService("XPathQueryService", "1.0");
+
+                    String query = "for $asig in /Asignaturas/Asignatura, $matri in /Matriculas/Matricula";
+                    query += " where data($asig/[@ID]) = data($matri/idAsignatura) and data($asig/[@ID='" + jtCodVer.getText() +"'])";
+                    query += " return <res>concat(|{data($matri/dniAlumno)}|)</res>";
+
+                    logger.log(Level.INFO, "[Gestion Asignaturas] Consulta realizada: " + query);
+
+                    ResourceSet result = servicio.query(query);
+                    ResourceIterator i = result.getIterator();
+
+                    List<String> listaDniAlumnos = new ArrayList<>();
+                    List<Alumno> listaAlumnos = new ArrayList<>();
+
+                    while (i.hasMoreResources()) {
+                        Resource r = i.nextResource();
+                        String dato = (String) r.getContent();
+                        String[] parts = dato.split("\\|");
+                        listaDniAlumnos.add(parts[1]);
+                    }
+
+                    if (listaDniAlumnos.size() > 0) {
+                        for (int x = 0; x < listaDniAlumnos.size(); x++) {
+                            query = "for $alumn in /Alumnos/Alumno";
+                            query += " where data($alumn[@DNI='" + listaDniAlumnos.get(x) + "'])";
+                            query += " return <res>concat(|{data($alumn/[@DNI])}|{data($alumn/nombre)}|{data($alumn/apellidos)}|{data($alumn/direccion)}|{data($alumn/email)}|{data($alumn/telefono)}|)</res>";
+
+                            logger.log(Level.INFO, "[Gestion Asignaturas] Consulta realizada: " + query);
+
+                            result = servicio.query(query);
+                            i = result.getIterator();
+                            if (i.hasMoreResources()) {
+                                Resource r = i.nextResource();
+                                String dato = (String) r.getContent();
+                                String[] parts = dato.split("\\|");
+                                listaAlumnos.add(new Alumno(parts[1], parts[2], parts[3], parts[4], parts[5], Integer.parseInt(parts[6])));
+                            }
+                        }
+                    }
+
+                    col.close();
+
+                    if (listaAlumnos.size() == 0) {
+                        JOptionPane.showMessageDialog(null, "Esta asignatura no tiene alumnos.", "Información",
+                                JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        VentanaListaAlumnosAsignatura vlaa = new VentanaListaAlumnosAsignatura(listaAlumnos, jtNombreVer.getText());
+                        vlaa.setLocationRelativeTo(null);
+                        vlaa.setVisible(true);
+                    }
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "Ejecuta la búsqueda primero por favor.", "Información",
+                            JOptionPane.INFORMATION_MESSAGE);
+                }
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+
+        });
 
         // Ejecución del boton consulta
         jbEjecuteCon.addActionListener(e -> {

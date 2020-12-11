@@ -1,6 +1,10 @@
-dic. 11, 2020 2:24:47 P. M. Views.VentanaGestionAlumnos lambda$new$4
+dic. 11, 2020 11:01:59 P. M. Views.MainView lambda$new$0
+INFO: [MainView] Xmls generados
+dic. 12, 2020 12:07:42 A. M. Views.VentanaGestionMatriculas lambda$new$2
+INFO: [Gestion Matriculas] Insert realizado: update insert <Matricula><dniAlumno>12345678Z</dniAlumno><idAsignatura>1</idAsignatura><nota>0.0</nota></Matricula> into /Matriculas
+dic. 12, 2020 12:07:50 A. M. Views.VentanaGestionMatriculas lambda$new$3
+INFO: [Gestion Matriculas] Update realizado: update value /Matriculas/Matricula[dniAlumno='12345678Z' and idAsignatura='1']/nota with data('2.0')
+dic. 12, 2020 12:07:55 A. M. Views.VentanaGestionAlumnos lambda$new$4
 INFO: [Gestion Alumnos] Consulta realizada: for $alumn in /Alumnos/Alumno return <res>concat(|{data($alumn/[@DNI])}|{data($alumn/nombre)}|{data($alumn/apellidos)}|{data($alumn/direccion)}|{data($alumn/email)}|{data($alumn/telefono)}|)</res>
-dic. 11, 2020 2:36:45 P. M. Views.VentanaGestionAlumnos lambda$new$4
-INFO: [Gestion Alumnos] Consulta realizada: for $alumn in /Alumnos/Alumno return <res>concat(|{data($alumn/[@DNI])}|{data($alumn/nombre)}|{data($alumn/apellidos)}|{data($alumn/direccion)}|{data($alumn/email)}|{data($alumn/telefono)}|)</res>
-dic. 11, 2020 2:43:40 P. M. Views.VentanaGestionAsignaturas lambda$new$4
-INFO: [Gestion Asignaturas] Consulta realizada: for $asig in /Asignaturas/Asignatura where data($asig/horas) = data('210') return <res>concat(|{data($asig/[@ID])}|{data($asig/nombre)}|{data($asig/profesor)}|{data($asig/horas)}|)</res>
+dic. 12, 2020 12:07:59 A. M. Views.VentanaGestionAsignaturas lambda$new$5
+INFO: [Gestion Asignaturas] Consulta realizada: for $asig in /Asignaturas/Asignatura return <res>concat(|{data($asig/[@ID])}|{data($asig/nombre)}|{data($asig/profesor)}|{data($asig/horas)}|)</res>
